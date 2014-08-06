@@ -1,0 +1,151 @@
+<html>
+<head>
+<title>SE IT-B</title>
+<link rel=stylesheet href="quiz_style.css" type="text/css">
+<script type="text/javascript">
+ 	window.onload=function() {alert('Mambos Quiz!! Hurry up..! to get selected.');};
+
+	function validatefield(fieldname,regex,helptext,helpid)
+		{
+			if(fieldname.value.length==0)
+			{
+				helpid.innerHTML="Please enter a value";
+				return false;
+			}
+			else
+			{
+				if(!(regex.test(fieldname.value)))
+					{		
+						helpid.innerHTML=helptext;
+						return false;
+					}
+				else
+					{
+						helpid.innerHTML="";
+						return true;
+					}
+			}			
+		}
+	
+     function formCheck(form)
+		{
+			if(validatefield(document.getElementById("first"),/^\w+$/,'invalid information',document.getElementById('first_help')) &&
+			   validatefield(document.getElementById("last"),/^\w+$/,'invalid information',document.getElementById('last_help'))  &&
+			   validatefield(document.getElementById("user"),/^[\w-_@]+$/,'invalid username information',document.getElementById('user_help')) &&
+			   validatefield(document.getElementById("pass"),/^[\w!_\?\$]{6,12}$/,'invalid password',document.getElementById('pass_help')) &&
+   			   validatefield(document.getElementById("email"),/^[\w-_\.]+@(yahoo|gmail|rediff|ovi|msn)\.[\.(\w{2,3})]+$/,'email not recognized',document.getElementById('email_help')) &&
+			   validatefield(document.getElementById("date"),/^\d{2}$/,'date not valid',document.getElementById('date_help')) &&
+			   validatefield(document.getElementById("year"),/^\d{4}$/,'year not entered correctly',document.getElementById('year_help')) &&
+			   validatefield(document.getElementById("mobile"),/^\+91\d{10}$/,'incorrect mobile number',document.getElementById('mobile_help')))
+			{
+				alert("hey man");
+				form.submit();
+			}
+			else
+			{
+				alert("please fill in the required information");
+			}
+		}
+
+</script>
+</head>
+<body>
+<div id="allcontent">
+<div id="titlepage">
+<h1>Mambos Quiz</h1>
+</div>
+<div id="formelem">
+<form>
+<table>
+<tr>
+<th>First Name: </th>
+<td><input id="first" name="first" type="text" size="50" onblur="validatefield(this,/^\w+$/,'invalid information',document.getElementById('first_help'));"  /></td><td><span name="first_help" id="first_help"></span></td>
+</tr>
+<tr>
+<th>Last Name:</th>
+<td><input  id="last" name="last" size="50" type="text"  onblur="validatefield(this,/^\w+$/,'invalid information',document.getElementById('last_help'));" /></td><td><span name="last_help" id="last_help"></span></td>
+</tr>
+<tr>
+<th>Choose Your Username:</th>
+<td><input id="user" name="user" type="text" size="50" onblur="validatefield(this,/^[\w-_@]+$/,'invalid username information',document.getElementById('user_help'));" /></td><td><span name="user_help" id="user_help"></span></td>
+</tr>
+<tr>
+<th>Create Your Password:</th>
+<td><input id="pass" name="pass" type="password" size="50" onblur="validatefield(this,/^[\w!_\?\$]{6,12}$/,'invalid password',document.getElementById('pass_help'));" /></td><td><span name="pass_help" id="pass_help"></span></td>
+</tr>
+<tr>
+<td></td><td>minimum 6 characters maximum 16 characters long</td>
+</tr>
+<tr>
+<th>Email_id:</th>
+<td><input id="email" type="text" name="email"  size="50" maxlength="30" onblur="validatefield(this,/^[\w-_\.]+@(yahoo|gmail|rediff|ovi|msn)\.[\.(\w{2,3})]+$/,'email not recognized',document.getElementById('email_help'));" /></td><td><span name="email_help" id="email_help"></span></td>
+</tr>
+<tr>
+<th></th>
+<td> eg:  username@gmail.com</td>
+</tr>
+<tr>
+<th>Birthday:</th>
+<td>Month:<select name="months" >
+<option value="January">January</option>
+<option value="February">February</option>
+<option value="March">March</option>
+<option value="April">April</option>
+<option value="May">May</option>
+<option value="June">June</option>
+<option value="July">July</option>
+<option value="August">August</option>
+<option value="September">September</option>
+<option value="October">October</option>
+<option value="November">November</option>
+<option value="December">December</option>
+</select>
+Date:<input id="date" type="text" size="2"  name="day" onblur="validatefield(this,/^\d{2}$/,'date not valid',document.getElementById('date_help'));" />
+Year:<input id="year" type="text" size="5"  name="year" onblur="validatefield(this,/^\d{4}$/,'year not entered correctly',document.getElementById('year_help'));" />
+</td>
+<td><span name="date_help" id="date_help"></span></td>
+<td><span name="year_help" id="year_help"></span></td>
+</tr>
+<tr>
+<th>Quiz difficulty:</th>
+<td><input type="radio" id="level" name="level" value="simple" checked="checked" />Simple<input value="professional" type="radio" id="level" name="level" />Professional</td>
+</tr>
+<tr>
+<th>Mobile Number:</th>
+<td><input type="text" id="mobile" name="mobile" size="50" value="+91" size="20" onblur="validatefield(this,/^\+91\d{10}$/,'incorrect mobile number',document.getElementById('mobile_help'));" /></td><td><span name="mobile_help" id="mobile_help"></span></td>
+</tr>
+<tr>
+<th>Country:</th>
+<td>
+<select name="country">
+<option value="India">India</option>
+<option value="U.S.A">U.S.A</option>
+<option value="Australia">Australia</option>
+<option value="New Zealand">New Zealand</option>
+<option value="Pakistan">Pakistan</option>
+<option value="Sri Lanka">Sri Lanka</option>
+<option value="South Africa">South Africa</option>
+<option value="Englend">Englend</option>
+<option value="West Indies">West Indies</option>
+<option value="Russia">Zimbawe</option>
+<option value="Ireland">Ireland</option>
+<option value="Dubai">Dubai</option>
+<option value="Abu Dhabi">Abu Dhabi</option>
+<option value="Tokyo">Tokyo</option>
+</select>
+</td>
+</tr>
+<tr>
+<th></th>
+<td><input id="agreement" type="checkbox" name="agreement">I agree the Terms of Services and Privacy Policy</td></td>
+</tr>
+<tr>
+<th></th>
+<td><span class="buttonout1" id="buttonout" onclick="formCheck(this.form);" >submit</span></td>
+</tr>
+</table>
+</div>
+</div>
+</form>
+</body>
+</html>						
