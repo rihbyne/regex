@@ -1,0 +1,73 @@
+body {
+                 font-family:Trebuchet MS,sans-serif;
+                 font-size:12px;
+                 background-color:white;
+                 
+      }
+
+ #formelem {
+         	border:2px solid silver; 
+		width:900px;
+          	padding:10px;
+                margin:10px;
+		border-radius:10px;
+	
+           }
+table 	{
+               
+               font-size:small;
+               font-weight:normal;
+               color:gray;
+	       border-spacing:5px;
+         }
+
+ input 
+	{
+		border-radius:7px;
+		border:2px solid #1E90FF;
+		color:#696969;
+		
+	}
+
+  span.buttonout1 
+	{
+		font-style:normal;
+		padding:5px;
+		padding-left:13px;
+		padding-right:13px;	
+		color:white;
+		background-color:#1E90FF;
+		border-radius:6px;
+		font-size:14px;
+		font-weight:bold;
+		cursor:pointer;
+	}
+span	
+	{
+		font-style:italic;
+		color:#FF0000;
+	}
+
+
+
+th 	{
+         text-align:right;
+  	 }
+
+#titlepage
+	 {
+    		 text-align:center;
+  		padding:10px;
+   	  	background-color:silver;
+   	 	color:white;
+   		font-size:20px;
+		 border-radius:10px;
+		margin:10px;
+		width:900px;
+          }
+#allcontent
+	{
+		margin-left:auto;
+		margin-right:auto;
+		width:900px;
+	}
